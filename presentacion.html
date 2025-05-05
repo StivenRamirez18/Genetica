@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Genética Ancestral - Presentación Interactiva</title>
+  <style>
+    body { 
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      background: #8B4513;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .slide {
+      display: none;
+      width: 90vw;
+      height: 90vh;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image:  url('/img/fondofinal.png');
+      background-size: 120% 120%;
+      background-position: center;
+      border-radius: 15px;
+      box-shadow: 
+        0 0 20px rgba(0,0,0,0.3),
+        -10px 0 30px rgba(0,0,0,0.2);
+    }
+    
+    .content-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      padding: 3rem;
+      border-radius: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .text-content {
+      flex: 1.2;
+      padding-right: 2rem;
+    }
+
+    .image-content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .text-content h1 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    img {
+      max-width: 100%;
+      max-height: 50vh;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      border: 3px solid rgba(255, 255, 255, 0.5);
+      object-fit: cover;
+    }
+
+    
+    p {
+      font-size: 1.8vw;
+      color: #2C1810;
+      line-height: 1.8;
+      margin: 1.5rem 0;
+      text-indent: 2rem;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 8px solid #8B4513;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      transform: rotate(-2deg);
+      transition: transform 0.3s ease;
+    }
+    
+    img:hover {
+      transform: rotate(0deg) scale(1.05);
+    }
+
+    .slide.active {
+      display: block;
+      animation: pageFlip 1.2s ease-out forwards;
+      transform-origin: left center;
+    }
+
+    @keyframes pageFlip {
+      0% {
+        transform: translate(-50%, -50%) rotateY(90deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) rotateY(0deg);
+        opacity: 1;
+      }
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 40px;
+      width: 100%;
+      text-align: center;
+      z-index: 1000;
+    }
+    
+    button {
+      padding: 15px 40px;
+      font-size: 1.4vw;
+      background: #8B4513;
+      color: #FFF5E6;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      font-family: 'Cinzel', serif;
+      margin: 0 10px;
+    }
+    
+    button:hover {
+      background: #6B3410;
+      transform: translateY(-2px);
+    }
+    
+    button:disabled {
+      background: #A89A8C;
+      cursor: not-allowed;
+    }
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="slide active">
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h1>El Loto Marchito del Nilo</h1>
+      <p></p>
+    </div>
+    <div class="image-content">
+      <img class="rionilo" src="/img/rio_nilo3.jpg" alt="Rio nilo">
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-text="Capitulo 1.   Los hijos de la misma sangre.              El sol nacía sobre las columnas de Karnak cuando nació Neferet, la perfecta, hija de Ptolomeo XVI y su hermana esposa, Arsinoe. Sus primeros llantos resonaron en la cámara dorada del templo de Isis, entre incienso y cánticos. Los sacerdotes proclamaron que era una bendición de los dioses, una flor de loto sagrada nacida del Nilo. Sin embargo, los ojos atentos del médico real, Meriamón, notaron algo inusual.">
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h1>I. Los hijos de la misma sangre</h1>
+      <p>El sol nacía sobre las columnas de Karnak cuando nació Neferet, "la perfecta", hija de Ptolomeo XVI y su hermana esposa, Arsinoe. Sus primeros llantos resonaron en la cámara dorada del templo de Isis, entre incienso y cánticos. Los sacerdotes proclamaron que era una bendición de los dioses, una flor de loto sagrada nacida del Nilo. Sin embargo, los ojos atentos del médico real, Meriamón, notaron algo inusual.</p>
+    </div>
+    <div class="image-content">
+      <img class="Karnak" src="/img/1.jpg" alt="Templo de Karnak">
+    </div>
+  </div>
+</div>
+
+<div class="slide" data-text="Neferet no tenía el tono muscular esperado. Sus miembros inferiores mostraban una discreta rotación medial. A los pocos meses, mientras otros niños intentaban gatear, ella apenas sostenía la cabeza. Un examen más minucioso reveló un pie equinovaro bilateral. La rigidez de los tendones calcáneos y la angulación del astrágalo sugirieron una displasia ósea subyacente. Meriamón guardó silencio. Sabía que la verdad podía costarle la lengua.">
+  <div class="content-wrapper">
+    <p>Neferet no tenía el tono muscular esperado. Sus miembros inferiores mostraban una discreta rotación medial. A los pocos meses, mientras otros niños intentaban gatear, ella apenas sostenía la cabeza. Un examen más minucioso reveló un pie equinovaro bilateral. La rigidez de los tendones calcáneos y la angulación del astrágalo sugirieron una displasia ósea subyacente. Meriamón guardó silencio. Sabía que la verdad podía costarle la lengua.
+    </p>
+    <img  class="Neferet" src="/img/2.jpg" alt="Neferet">
+  </div>
+</div>
+
+<div class="slide" data-text="El diagnóstico, siglos más tarde, sería evidente para cualquier estudiante de medicina familiarizado con la consanguinidad: una posible expresión fenotípica de genes recesivos deletéreos acumulados a través de generaciones de endogamia sistemática.">
+  <div class="content-wrapper">
+    <p>El diagnóstico, siglos más tarde, sería evidente para cualquier estudiante de medicina familiarizado con la consanguinidad: una posible expresión fenotípica de genes recesivos deletéreos acumulados a través de generaciones de endogamia sistemática.
+    </p>
+    <img class="imagen3" src="/img/3.jpg" alt="ADN y Herencia">
+  </div>
+</div>
+
+<div class="slide" data-text="Neferet era, en términos genéticos, el producto de una homocigosidad extendida. Sus padres, ambos portadores de múltiples alelos patológicos recesivos —heredados a su vez de ancestros comunes por línea directa— habían traspasado a su hija un código defectuoso encerrado entre la belleza ritual del linaje.">
+  <div class="content-wrapper">
+    <p>Neferet era, en términos genéticos, el producto de una homocigosidad extendida. Sus padres, ambos portadores de múltiples alelos patológicos recesivos —heredados a su vez de ancestros comunes por línea directa— habían traspasado a su hija un código defectuoso encerrado entre la belleza ritual del linaje.</p>
+    <img   class="img4" src="/img/4.jpg" alt="Papiros Médicos">
+  </div>
+</div>
+
+<div class="slide" data-text=" Capitulo 2.   El secreto de los papiros.              En el templo de Imhotep, oculto entre columnas erosionadas, vivía un anciano escriba llamado Padjemru. Médico, filósofo y estudioso de la fisiología humana, había dedicado décadas a estudiar registros genealógicos, momias reales y antiguos papiros anatómicos. Había visto deformidades similares en cuerpos de la dinastía XVIII: paladares hendidos, hipoplasias mandibulares, escoliosis severas, y en el caso de Tutankamón, necrosis avascular de los huesos del pie y una aparente enfermedad genética multisistémica, posiblemente Síndrome de Marfan o de Freiberg, exacerbada por endogamia.
+">
+  <div class="content-wrapper">
+    <h1>II. El secreto de los papiros</h1>
+    <p>En el templo de Imhotep, oculto entre columnas erosionadas, vivía un anciano escriba llamado Padjemru. Médico, filósofo y estudioso de la fisiología humana, había dedicado décadas a estudiar registros genealógicos, momias reales y antiguos papiros anatómicos. Había visto deformidades similares en cuerpos de la dinastía XVIII: paladares hendidos, hipoplasias mandibulares, escoliosis severas, y en el caso de Tutankamón, necrosis avascular de los huesos del pie y una aparente enfermedad genética multisistémica, posiblemente Síndrome de Marfan o de Freiberg, exacerbada por endogamia.
+    </p>
+    <img   class="Papiros" src="/img/6.jpg" alt="Papiros Médicos">
+   </div>
+</div>
+
+<div class="slide" data-text="En una noche de luna llena, Neferet acudió a él en secreto, arrastrando sus pies vendados, apoyada en uno de los tantos bastones que poseía. Quería entender por qué su cuerpo dolía al caminar, por qué el simple acto de subir escaleras le requería un esfuerzo titánico.
+
+Padjemru no le habló de dioses, sino de genes.">
+  <div class="content-wrapper">
+  
+    <p>En una noche de luna llena, Neferet acudió a él en secreto, arrastrando sus pies vendados, apoyada en uno de los tantos bastones que poseía. Quería entender por qué su cuerpo dolía al caminar, por qué el simple acto de subir escaleras le requería un esfuerzo titánico.
+
+      Padjemru no le habló de dioses, sino de genes.
+      </p>
+    <img src="/img/5.jpg" alt="Agricultura Ancestral">
+  </div>
+</div>
+
+<div class="slide" data-text="—Eres hija de un sistema cerrado —le explicó, mostrándole un dibujo de cromosomas. Le habló de enfermedades autosómicas recesivas, de cómo, cuando dos parientes cercanos se reproducen, las probabilidades de coincidir en alelos mutados aumentan drásticamente. Le enseñó sobre la fibrosis quística, que bloqueaba los pulmones de algunos príncipes fallecidos prematuramente; sobre la anemia de Fanconi, que causaba fallo medular en niños de sangre azul; sobre la talasemia, frecuente en egipcios y griegos, que generaba anemia microcítica y deformidades óseas craneales visibles en momias reales.   —La sangre que consideraron pura —dijo Padjemru— era, en realidad, genéticamente vulnerable. Como un loto encerrado en su propia sombra.">
+  <div class="content-wrapper">
+    <p>—Eres hija de un sistema cerrado —le explicó, mostrándole un dibujo de cromosomas. Le habló de enfermedades autosómicas recesivas, de cómo, cuando dos parientes cercanos se reproducen, las probabilidades de coincidir en alelos mutados aumentan drásticamente. Le enseñó sobre la fibrosis quística, que bloqueaba los pulmones de algunos príncipes fallecidos prematuramente; sobre la anemia de Fanconi, que causaba fallo medular en niños de sangre azul; sobre la talasemia, frecuente en egipcios y griegos, que generaba anemia microcítica y deformidades óseas craneales visibles en momias reales. 
+      —La sangre que consideraron pura —dijo Padjemru— era, en realidad, genéticamente vulnerable. Como un loto encerrado en su propia sombra.
+      
+    </p>
+    <img src="/img/7.jpg" alt="Evolución del Maíz">
+  </div>
+</div>
+
+<div class="slide" data-text="capitulo 3.  El amor y la rebelión.       A los 16 años, Neferet debía casarse con su primo Khamudi, un joven apuesto pero de temperamento colérico y portador —sin saberlo— de la misma mutación CFTR que ella. El matrimonio estaba destinado a fortalecer el linaje, pero Neferet ya no creía en linajes.">
+  <div class="content-wrapper">
+    <h1>III. El amor y la rebelión    </h1>
+    <p>A los 16 años, Neferet debía casarse con su primo Khamudi, un joven apuesto pero de temperamento colérico y portador —sin saberlo— de la misma mutación CFTR que ella. El matrimonio estaba destinado a fortalecer el linaje, pero Neferet ya no creía en linajes.    </p>
+    <img src="/img/8.jpg" alt="Medicina Moderna">
+  </div>
+</div>
+
+<div class="slide" data-text="Había conocido a un joven médico alejandrino, Theron, de ascendencia mixta egipcia y helénica. Theron era un estudioso de la fisiología y la teoría de humores, pero también conocía las ideas nuevas de la medicina hipocrática. Juntos discutían sobre el equilibrio entre herencia y ambiente, y sobre cómo ciertas dolencias —hoy llamaríamos enfermedades poligénicas— eran frecuentes en linajes cerrados.">
+  <div class="content-wrapper">
+    <p>Había conocido a un joven médico alejandrino, Theron, de ascendencia mixta egipcia y helénica. Theron era un estudioso de la fisiología y la teoría de humores, pero también conocía las ideas nuevas de la medicina hipocrática. Juntos discutían sobre el equilibrio entre herencia y ambiente, y sobre cómo ciertas dolencias —hoy llamaríamos enfermedades poligénicas— eran frecuentes en linajes cerrados.</p>
+    <img src="/img/9.jpg" alt="Noche en Egipto">
+  </div>
+</div>
+
+<div class="slide" data-text="Neferet amó a Theron con la intensidad de quien quiere romper un ciclo ancestral. En un acto sin precedentes, rechazó la unión consanguínea impuesta por la reina madre. Alegó motivos biológicos. Usó el lenguaje de los sabios, no el de los poetas:
+
+—La endogamia ha transformado este linaje en una colección de patologías ambulantes. No repetiré el error.">
+  <div class="content-wrapper">
+    <p>Neferet amó a Theron con la intensidad de quien quiere romper un ciclo ancestral. En un acto sin precedentes, rechazó la unión consanguínea impuesta por la reina madre. Alegó motivos biológicos. Usó el lenguaje de los sabios, no el de los poetas:
+
+      —La endogamia ha transformado este linaje en una colección de patologías ambulantes. No repetiré el error.</p>
+    <img src="/img/10.jpg" alt="Estructura del ADN">
+  </div>
+</div>
+
+<div class="slide" data-text="Fue exiliada al Alto Egipto. Pero no antes de que Padjemru y Theron ayudaran a que se llevara consigo un baúl lleno de papiros médicos, diagramas anatómicos y una tabla genealógica real en la que él había señalado, generación tras generación, la acumulación de malformaciones fenotípicas.">
+  <div class="content-wrapper">
+    <p>Fue exiliada al Alto Egipto. Pero no antes de que Padjemru y Theron ayudaran a que se llevara consigo un baúl lleno de papiros médicos, diagramas anatómicos y una tabla genealógica real en la que él había señalado, generación tras generación, la acumulación de malformaciones fenotípicas.</p>
+    <img src="/img/11.jpg" alt="Células y Enfermedades">
+  </div>
+</div>
+
+<div class="slide" data-text="Capitulo 4. El legado de Neferet.          En los oasis de Kharga, Neferet y Theron fundaron un pequeño centro de sanación. Ella enseñaba a los aprendices sobre herencia, transmisión de caracteres, y la importancia de la diversidad genética.">
+  <div class="content-wrapper">
+    <h1>IV. El legado de Neferet    </h1>
+    <p>En los oasis de Kharga, Neferet y Theron fundaron un pequeño centro de sanación. Ella enseñaba a los aprendices sobre herencia, transmisión de caracteres, y la importancia de la diversidad genética.  </p>
+    <img src="/img/12.jpg" alt="Matrimonio Real">
+  </div>
+</div> 
+
+<div class="slide" data-text="Hablaba de cómo una población que se cierra sobre sí misma se condena al desequilibrio genómico, al aumento de coeficientes de consanguinidad (F) peligrosamente altos, y a la fragilidad inmunológica. ">
+  <div class="content-wrapper">
+    <p>Hablaba de cómo una población que se cierra sobre sí misma se condena al desequilibrio genómico, al aumento de coeficientes de consanguinidad (F) peligrosamente altos, y a la fragilidad inmunológica. </p>
+    <img src="/img/12.jpg" alt="Células y Enfermedades">
+  </div>
+</div>
+
+<div class="slide" data-text="Padjemru moriría años después, pero dejó escrito en uno de sus últimos papiros:“La sangre divina, repetida sin mezcla, pierde su esencia y se convierte en sombra. Quienes sanan no son los dioses, sino aquellos que entienden cómo se hereda el fuego y cómo se evita que consuma.">
+  <div class="content-wrapper">
+    <p>Padjemru moriría años después, pero dejó escrito en uno de sus últimos papiros: “La sangre divina, repetida sin mezcla, pierde su esencia y se convierte en sombra. Quienes sanan no son los dioses, sino aquellos que entienden cómo se hereda el fuego y cómo se evita que consuma." </p>
+    <img src="/img/13.jpg" alt="Medicina Alejandrina">
+  </div>
+</div>
+
+<div class="slide" data-text="Neferet nunca volvió al trono, pero siglos después, cuando los romanos saquearon los templos y abrieron las criptas reales, encontraron, entre los sarcófagos deformes de los antiguos reyes, una pequeña estatua de marfil. Tenía forma de loto… pero con un tallo curvado. Debajo, grabado en griego antiguo: De la mezcla nace la vida, del encierro, la extinción">
+  <div class="content-wrapper">
+    <p>Neferet nunca volvió al trono, pero siglos después, cuando los romanos saquearon los templos y abrieron las criptas reales, encontraron, entre los sarcófagos deformes de los antiguos reyes, una pequeña estatua de marfil. Tenía forma de loto… pero con un tallo curvado. Debajo, grabado en griego antiguo: "De la mezcla nace la vida, del encierro, la extinción</p>
+    <img src="/img/13.jpg" alt="Medicina Alejandrina">
+  </div>
+</div>
+
+
+<div class="slide" data-text="Epílogo médico. Este relato busca ilustrar la repercusión real que tiene la consanguinidad sobre la salud poblacional y la estabilidad genética de linajes humanos">
+  <div class="content-wrapper">
+    <h1>Epílogo médico</h1>
+    <p>Este relato busca ilustrar la repercusión real que tiene la consanguinidad sobre la salud poblacional y la estabilidad genética de linajes humanos</p>
+    </div>
+</div>
+
+<div class="slide" data-text="En términos clínicos:    Las enfermedades autosómicas recesivas aumentan su prevalencia en poblaciones endogámicas debido a la mayor probabilidad de homocigosidad para mutaciones patogénicas.
+La endogamia puede producir acumulación de mutaciones raras, pérdida de heterocigosidad, y aparición de síndromes poco frecuentes con penetrancia completa en generaciones sucesivas.">
+  <div class="content-wrapper">
+    <p>Las enfermedades autosómicas recesivas aumentan su prevalencia en poblaciones endogámicas debido a la mayor probabilidad de homocigosidad para mutaciones patogénicas. La endogamia puede producir acumulación de mutaciones raras, pérdida de heterocigosidad, y aparición de síndromes poco frecuentes con penetrancia completa en generaciones sucesivas.
+      </p>
+    </div>
+</div>
+
+<div class="slide" data-text="En contextos históricos, como el de la dinastía ptolemaica o la XVIII dinastía egipcia, estos efectos fueron observados en restos arqueológicos mediante técnicas modernas como PCR, secuenciación de ADN mitocondrial, y escaneo por tomografía computarizada (CT scan).
+El coeficiente de consanguinidad (F) es un parámetro utilizado para calcular la probabilidad de que un individuo reciba dos alelos idénticos por descendencia común; en uniones entre hermanos, F = 0.25.">
+  <div class="content-wrapper">
+    <p>En contextos históricos, como el de la dinastía ptolemaica o la XVIII dinastía egipcia, estos efectos fueron observados en restos arqueológicos mediante técnicas modernas como PCR, secuenciación de ADN mitocondrial, y escaneo por tomografía computarizada (CT scan).  El coeficiente de consanguinidad (F) es un parámetro utilizado para calcular la probabilidad de que un individuo reciba dos alelos idénticos por descendencia común; en uniones entre hermanos, F = 0.25.</p>
+    </div>
+</div>
+
+<div class="slide" data-text="Este cuento no es solo ficción: es una advertencia antigua con vigencia moderna sobre la importancia de la diversidad genética, tanto en la medicina como en la sociedad.">
+  <div class="content-wrapper">
+    <p>Este cuento no es solo ficción: es una advertencia antigua con vigencia moderna sobre la importancia de la diversidad genética, tanto en la medicina como en la sociedad.</p>
+    </div>
+</div>
+
+
+<div class="controls">
+  <button id="startButton">Comenzar cuento</button>
+  <button id="restartButton" style="display: none;" disabled>Reiniciar</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const startButton = document.getElementById('startButton');
+  const restartButton = document.getElementById('restartButton');
+  let current = 0;
+
+  // Ocultar todas las diapositivas al inicio excepto la primera
+  slides.forEach((slide, index) => {
+    if (index !== 0) slide.classList.remove('active');
+  });
+
+  let spanishVoice = null;
+  window.speechSynthesis.onvoiceschanged = function() {
+    const voices = window.speechSynthesis.getVoices();
+    spanishVoice = voices.find(voice => voice.lang.includes('es'));
+  };
+
+  function speakAndAdvance() {
+    const text = slides[current].dataset.text;
+    if (text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'es-ES';
+      if (spanishVoice) utterance.voice = spanishVoice;
+      utterance.rate = 0.9;
+      utterance.pitch = 1.1;
+      
+      utterance.onend = () => {
+        setTimeout(() => {
+          slides[current].classList.remove('active');
+          current++;
+          if (current < slides.length) {
+            slides[current].classList.add('active');
+            speakAndAdvance();
+          } else {
+            restartButton.style.display = 'inline-block'; // Mostrar el botón al finalizar
+            restartButton.disabled = false;
+            startButton.disabled = true;
+          }
+        }, 1000);
+      };
+      
+      speechSynthesis.speak(utterance);
+    } else {
+      setTimeout(() => {
+        slides[current].classList.remove('active');
+        current++;
+        if (current < slides.length) {
+          slides[current].classList.add('active');
+          speakAndAdvance();
+        }
+      }, 3000);
+    }
+  }
+
+  function startPresentation() {
+    current = 0;
+    slides.forEach((slide, index) => {
+      if (index === 0) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+    startButton.style.display = 'none'; // Ocultar el botón de inicio
+    startButton.disabled = true;
+    restartButton.style.display = 'none';
+    restartButton.disabled = true;
+    setTimeout(speakAndAdvance, 2000);
+  }
+
+  function restartPresentation() {
+    speechSynthesis.cancel();
+    current = 0;
+    slides.forEach((slide, index) => {
+      if (index === 0) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
+    startButton.disabled = false;
+    restartButton.style.display = 'none'; // Ocultar el botón al reiniciar
+    restartButton.disabled = true;
+  }
+
+  startButton.addEventListener('click', startPresentation);
+  restartButton.addEventListener('click', restartPresentation);
+</script>
+
+</body>
+</html>
+  
